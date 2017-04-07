@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "http-server"
+    "dev": "http-server",
+    "deploy": "export $(cat .env | xargs) && rsync -azv --exclude=node_modules --exclude=.git --exclude=.env ./ $DEPLOY_DIR"
   },
   "author": "Quang Van <quang@lessfocus.com>",
   "license": "Apache 2.0",
